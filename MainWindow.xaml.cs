@@ -18,6 +18,9 @@ namespace LingChat
         {
             InitializeComponent();
             BuildNavigation();
+#if DEBUG
+            ModeTextBlock.Text = "Debug Mode";
+#endif
         }
 
         private void BuildNavigation()

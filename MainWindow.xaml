@@ -15,43 +15,43 @@
   WindowCornerPreference="Round"
   mc:Ignorable="d"
 >
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="*" />
-    </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <ui:TitleBar
+        <ui:TitleBar
       Grid.Row="0"
       Title="LingChat"
       Icon="{ui:ImageIcon 'pack://application:,,,/Assets/wpfui-icon-256.png'}"
     >
-      <ui:TitleBar.Header>
-        <TextBlock
+            <ui:TitleBar.Header>
+                <TextBlock
           Margin="12,0,0,0"
           VerticalAlignment="Center"
           Opacity="0.78"
           Text="桌面客户端"
         />
-      </ui:TitleBar.Header>
-      <ui:TitleBar.TrailingContent>
-        <TextBlock
+            </ui:TitleBar.Header>
+            <ui:TitleBar.TrailingContent>
+                <TextBlock x:Name="ModeTextBlock"
           Margin="0,0,16,0"
           VerticalAlignment="Center"
           Opacity="0.68"
           Text="页面注册模式"
         />
-      </ui:TitleBar.TrailingContent>
-    </ui:TitleBar>
+            </ui:TitleBar.TrailingContent>
+        </ui:TitleBar>
 
-    <Grid Grid.Row="1" Margin="24">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="260" />
-        <ColumnDefinition Width="24" />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Margin="24">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260" />
+                <ColumnDefinition Width="24" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-      <ui:NavigationView
+            <ui:NavigationView
         x:Name="RootNavigationView"
         Grid.Column="0"
         PaneDisplayMode="Left"
@@ -60,33 +60,29 @@
         IsBackButtonVisible="Collapsed"
         PaneTitle="工作区"
       >
-        <ui:NavigationView.PaneHeader>
-          <StackPanel Margin="0,8,0,12">
-            <TextBlock
+                <ui:NavigationView.PaneHeader>
+                    <StackPanel>
+                        <Image Height="127" HorizontalAlignment="Left" Source="/Logo.png" Width="247"/>
+                        <TextBlock
               FontSize="24"
               FontWeight="SemiBold"
-              Text="LingChat"
+              Text="LingChat启动器" HorizontalAlignment="Center" VerticalAlignment="Center"
             />
-            <TextBlock
-              Margin="0,4,0,0"
-              Opacity="0.78"
-              Text="左侧导航由注册表生成，页面与 PageHeader 都可独立装配。"
-              TextWrapping="Wrap"
-            />
-          </StackPanel>
-        </ui:NavigationView.PaneHeader>
-      </ui:NavigationView>
+                    </StackPanel>
 
-      <Grid Grid.Column="2">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-          <RowDefinition x:Name="PageHeaderSpacerRow" Height="20" />
-          <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+                </ui:NavigationView.PaneHeader>
+    </ui:NavigationView>
 
-        <ContentControl x:Name="PageHeaderHost" Grid.Row="0" />
-        <ContentControl x:Name="PageContentHost" Grid.Row="2" />
-      </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition x:Name="PageHeaderSpacerRow" Height="20" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <ContentControl x:Name="PageHeaderHost" Grid.Row="0" />
+                <ContentControl x:Name="PageContentHost" Grid.Row="2" />
+            </Grid>
+        </Grid>
     </Grid>
-  </Grid>
 </ui:FluentWindow>
